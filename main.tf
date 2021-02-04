@@ -69,6 +69,6 @@ module "unseal_kms" {
   credentials_file = var.credentials_file
   project_id       = var.project_id
   region           = "global"
-  keyring_name     = "vault_unseal_keyring_v2"
+  keyring_name     = "vault_unseal_keyring"
   key_name         = "vault_unseal_key"
 }
