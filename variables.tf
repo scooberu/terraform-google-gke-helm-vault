@@ -1,26 +1,32 @@
 variable "project_id" {
   type = string
-}
-
-variable "cluster_name" {
-  type = string
-}
-
-variable "credentials_file" {
-  type = string
+  description = "Project ID of the GCP project in which resources will be created"
 }
 
 variable "region" {
   type = string
+  description = "GCP region in which to create resources"
+}
+
+variable "cluster_zone" {
+  type = string
+  description = "GCP zone in which to instantiate the Kubernetes cluster"
+}
+
+variable "cluster_name" {
+  type = string
+  description = "Name to use for the Vault GKE cluster"
+}
+
+variable "credentials_file" {
+  type = string
+  description = "Path to GCP Credentials JSON file"
 }
 
 variable "num_vault_pods" {
   type    = number
   default = 3
-}
-
-variable "cluster_zone" {
-  type = string
+  description = "Number of Vault pods to create in GKE"
 }
 
 variable "cert_secret_name" {
