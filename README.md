@@ -38,3 +38,7 @@ module "test-vault" {
   vault_version             = "1.5.5"
 }
 ```
+
+## Cluster's up! How do I get started with Vault?
+
+Great! You are now officially at the point where [the Hashicorp documentation](https://www.vaultproject.io/docs/platform/k8s/helm/examples/ha-with-raft) starts to be useful!
