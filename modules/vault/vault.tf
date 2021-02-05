@@ -21,7 +21,7 @@ server:
     VAULT_API_ADDR: https://127.0.0.1
   extraVolumes:
     - type: secret
-      name: vault-acme-tls
+      name: ${var.vault_tls_k8s_secret}
     - type: secret
       name: vault-internal-tls
 
@@ -50,8 +50,8 @@ server:
           tls_disable = 0
           address = "[::]:8200"
           cluster_address = "[::]:8201"
-          tls_cert_file = "/vault/userconfig/vault-acme-tls/tls.crt"
-          tls_key_file  = "/vault/userconfig/vault-acme-tls/tls.key"
+          tls_cert_file = "/vault/userconfig/${var.vault_tls_k8s_secret}/tls.crt"
+          tls_key_file  = "/vault/userconfig/${var.vault_tls_k8s_secret}/tls.key"
           tls_client_ca_file = "/vault/userconfig/vault-acme-tls/tls.ca"
         }
 
