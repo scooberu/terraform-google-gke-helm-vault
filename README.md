@@ -1,5 +1,7 @@
 # README
 
+A detailed accounting of the module structure can be found [in this blog post](https://www.reu.dev/blog/2021/2/4/new-terraform-module-vault-on-gke). An operational summary follows below.
+
 ## Purpose
 
 Vault's implementation on Kubernetes is really pretty good, but there's no offical (or even particularly high-quality) batteries-included Terraform module out there to produce a Vault Kubernetes cluster on GKE with minimal pain. So I decided to write one.
@@ -11,6 +13,10 @@ As with all Terraform on GCP, you'll need to create a service account (or use on
 ### Caveat: DNS Stuff
 
 The outward-facing ACME TLS cert uses DNS validation (because this is all happening programmatically, it's easier than trying to do HTTP validation). You'll need to own whatever domain you provide in the module invocation's `vault_hostname` variable.
+
+### Caveat: ACME/LetsEncrypt Cert Stuff
+
+The externally-facing TLS listener for this cluster is provisioned with a cert from ACME (LetsEncrypt). As a result, you will need to run a `terraform apply` at least once every 30 days in order to renew the cert.
 
 ## Example Invocation of this Module
 
