@@ -14,6 +14,10 @@ As with all Terraform on GCP, you'll need to create a service account (or use on
 
 The outward-facing ACME TLS cert uses DNS validation (because this is all happening programmatically, it's easier than trying to do HTTP validation). You'll need to own whatever domain you provide in the module invocation's `vault_hostname` variable.
 
+The way I do this is with a domain I own in [Google Domains](https://domains.google.com) (a separate service from GCP). I'd recommend running an initial `terraform apply` and seeing it error out due to the ACME cert resource not being able to find a record for the host specified at `vault_hostname`. Then pop into GCP -> Network Services -> Cloud DNS, grab the IP address from your newly created Zone (making sure to note the Nameservers that it's using!), and add those Nameservers as NS records for `vault.yourdomain.com` (or whatever parameter you stuck in the `vault_hostname` variable) with your DNS provider. Then simply wait a few minutes for the change to propagate and `terraform apply` again.
+
+There are probably other ways to do this involving GCP more directly for domain name management, but this is how I handle it with a pre-existing domain that I already own in another platform.
+
 ### Caveat: ACME/LetsEncrypt Cert Stuff
 
 The externally-facing TLS listener for this cluster is provisioned with a cert from ACME (LetsEncrypt). As a result, you will need to run a `terraform apply` at least once every 30 days in order to renew the cert.
