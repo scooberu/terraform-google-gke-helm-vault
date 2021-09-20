@@ -28,7 +28,7 @@ The externally-facing TLS listener for this cluster is provisioned with a cert f
 module "test-vault" {
   module "gke-helm-vault" {
   source                    = "gatsbysghost/gke-helm-vault/google"
-  version                   = "0.1.2"
+  version                   = "0.1.3"
   credentials_file          = "./terraform-gcp-credentials.json"
   project_id                = "my-project-8675309"
   cluster_name              = "vault"
@@ -41,7 +41,7 @@ module "test-vault" {
   cert_common_name          = "MyCorp, Inc. Private Cert Authority"
   cert_country              = "United States"
   public_cert_email_address = "janedoe@domain.com"
-  vault_version             = "1.5.5"
+  vault_version             = "1.8.2"
 }
 ```
 
@@ -49,6 +49,6 @@ module "test-vault" {
 
 Great! You are now officially at the point where [the Hashicorp documentation](https://www.vaultproject.io/docs/platform/k8s/helm/examples/ha-with-raft) starts to be useful!
 
-My advice at this point would be to log into your cluster with kubectl (by following the instructions in the "Connect" dialog box in GKE). You may notice that all of your Vault pods are in an unready state, and in the logs, it will indicate that the Vault cluster is unsealed.
+My advice at this point would be to log into your cluster with kubectl (by following the instructions in the "Connect" dialog box in GKE). You may notice that all of your Vault pods are in an unready state, and in the logs, it will indicate that the pods cannot communicate with each other because the Vault cluster is sealed.
 
 This can be quickly remedied by simply connecting to any of your Vault pods (`kubectl exec -n vault -it vault-0 -- /bin.sh`) and executing the `vault operator init` command. This will generate your unseal tokens and root token, and all of the pods should immediately become ready at this point.
