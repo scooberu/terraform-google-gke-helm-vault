@@ -8,7 +8,7 @@ Vault's implementation on Kubernetes is really pretty good, but there's no offic
 
 ## A Note on Credentials
 
-As with all Terraform on GCP, you'll need to create a service account (or use one of your existing ones) and provide this module with access to it. That service account will need quite a few permissions, as it will be creating a static external IP, making new service accounts for Vault, generating Kubernetes secrets, setting up a cluster, generating keys and keyrings in Cloud KMS, and more. The JSON key for these credentials should be stored somewhere that Vault can access it, but *do not commit these credentials to a repo in plaintext*. My preferred tool for encrypting some parts of a Git repo is [git-crypt](https://github.com/AGWA/git-crypt).
+As with all Terraform on GCP, you'll need to create a service account (or use one of your existing ones) and provide this module with access to it. That service account will need quite a few permissions, as it will be creating a static external IP, making new service accounts for Vault, generating Kubernetes secrets, setting up a cluster, generating keys and keyrings in Cloud KMS, and more. The JSON key for these credentials should be stored somewhere that Terraform can access it, but *do not commit these credentials to a repo in plaintext*. My preferred tool for encrypting some parts of a Git repo is [git-crypt](https://github.com/AGWA/git-crypt).
 
 ### Caveat: DNS Stuff
 
