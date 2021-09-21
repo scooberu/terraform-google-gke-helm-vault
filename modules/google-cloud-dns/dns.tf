@@ -6,7 +6,7 @@ resource "google_dns_managed_zone" "vault_dns_zone" {
 
   visibility = "public"
   dnssec_config {
-    state = "off"
+    state = "on"
   }
 }
 

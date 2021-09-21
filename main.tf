@@ -54,6 +54,7 @@ module "vault" {
   unseal_account_name       = module.unseal_kms.service_account
   num_vault_pods            = var.num_vault_pods
   cluster_endpoint          = module.gke-cluster.endpoint
+  node_pool                 = module.gke-cluster.node_pool_id
   cluster_cert              = module.gke-cluster.ca_certificate
   vault_internal_tls_ca     = module.tls.ca_cert
   vault_internal_tls_cert   = module.tls.cert
@@ -69,6 +70,10 @@ module "unseal_kms" {
   credentials_file = var.credentials_file
   project_id       = var.project_id
   region           = "global"
-  keyring_name     = "vault_unseal_keyring_2"
-  key_name         = "vault_unseal_key"
+  keyring_name     = module.randomized.friendly_keyring_name
+  key_name         = module.randomized.friendly_key_name
+}
+
+module "randomized" {
+  source = "./modules/randomized"
 }

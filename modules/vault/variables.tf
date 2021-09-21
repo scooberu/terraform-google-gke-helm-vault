@@ -3,7 +3,7 @@ variable "num_vault_pods" {
 }
 
 variable "vault_version" {
-  type = string
+  type        = string
   description = "Version of Hashicorp Vault to use for this deployment"
 }
 
@@ -36,6 +36,9 @@ variable "loadbalancer_ip" {
 }
 
 variable "cluster_endpoint" {
+}
+
+variable "node_pool" {
 }
 
 variable "cluster_cert" {

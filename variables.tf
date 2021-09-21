@@ -1,31 +1,31 @@
 variable "project_id" {
-  type = string
+  type        = string
   description = "Project ID of the GCP project in which resources will be created"
 }
 
 variable "region" {
-  type = string
+  type        = string
   description = "GCP region in which to create resources"
 }
 
 variable "cluster_zone" {
-  type = string
+  type        = string
   description = "GCP zone in which to instantiate the Kubernetes cluster"
 }
 
 variable "cluster_name" {
-  type = string
+  type        = string
   description = "Name to use for the Vault GKE cluster"
 }
 
 variable "credentials_file" {
-  type = string
+  type        = string
   description = "Path to GCP Credentials JSON file"
 }
 
 variable "num_vault_pods" {
-  type    = number
-  default = 3
+  type        = number
+  default     = 3
   description = "Number of Vault pods to create in GKE"
 }
 
@@ -60,6 +60,6 @@ variable "public_cert_email_address" {
 }
 
 variable "vault_version" {
-  type = string
+  type        = string
   description = "Version of Hashicorp Vault to use (e.g. '1.5.5')"
 }

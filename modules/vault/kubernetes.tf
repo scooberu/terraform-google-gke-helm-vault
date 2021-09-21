@@ -2,7 +2,7 @@ resource "kubernetes_namespace" "vault" {
   metadata {
     name = "vault"
   }
-  depends_on = [var.cluster_endpoint]
+  depends_on = [var.cluster_endpoint, var.node_pool]
 }
 
 resource "kubernetes_secret" "vault_local_tls" {
