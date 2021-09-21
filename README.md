@@ -28,7 +28,7 @@ The externally-facing TLS listener for this cluster is provisioned with a cert f
 module "test-vault" {
   module "gke-helm-vault" {
   source                    = "gatsbysghost/gke-helm-vault/google"
-  version                   = "0.1.3"
+  version                   = "0.2.0"
   credentials_file          = "./terraform-gcp-credentials.json"
   project_id                = "my-project-8675309"
   cluster_name              = "vault"
