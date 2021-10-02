@@ -53,4 +53,9 @@ Great! You are now officially at the point where [the Hashicorp documentation](h
 
 My advice at this point would be to log into your cluster with kubectl (by following the instructions in the "Connect" dialog box in GKE). You may notice that all of your Vault pods are in an unready state, and in the logs, it will indicate that the pods cannot communicate with each other because the Vault cluster is sealed.
 
+
+
+These are lines I don't want to include in this commit
+boop bop
+
 This can be quickly remedied by simply connecting to any of your Vault pods (`kubectl exec -n vault -it vault-0 -- /bin.sh`) and executing the `vault operator init` command. This will generate your unseal tokens and root token, and all of the pods should immediately become ready at this point.
