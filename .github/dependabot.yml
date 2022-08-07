@@ -9,7 +9,7 @@ updates:
     directory: "/modules/vault/versions.tf" # Location of package manifests
     schedule:
       interval: "weekly"
-      day: "Saturday"
+      day: "saturday"
       time: "18:00"
       timezone: "America/Los_Angeles"
 
@@ -17,7 +17,7 @@ updates:
     directory: "/modules/tls-private/versions.tf" # Location of package manifests
     schedule:
       interval: "weekly"
-      day: "Saturday"
+      day: "saturday"
       time: "18:00"
       timezone: "America/Los_Angeles"
 
@@ -25,7 +25,7 @@ updates:
     directory: "/modules/google-kms/versions.tf" # Location of package manifests
     schedule:
       interval: "weekly"
-      day: "Saturday"
+      day: "saturday"
       time: "18:00"
       timezone: "America/Los_Angeles"
       
@@ -33,7 +33,7 @@ updates:
     directory: "/modules/google-gke-cluster/versions.tf" # Location of package manifests
     schedule:
       interval: "weekly"
-      day: "Saturday"
+      day: "saturday"
       time: "18:00"
       timezone: "America/Los_Angeles"
       
@@ -41,7 +41,7 @@ updates:
     directory: "/modules/google-cloud-dns/versions.tf" # Location of package manifests
     schedule:
       interval: "weekly"
-      day: "Saturday"
+      day: "saturday"
       time: "18:00"
       timezone: "America/Los_Angeles"
 
@@ -49,6 +49,6 @@ updates:
     directory: "/modules/acme-cert/versions.tf" # Location of package manifests
     schedule:
       interval: "weekly"
-      day: "Saturday"
+      day: "saturday"
       time: "18:00"
       timezone: "America/Los_Angeles"
