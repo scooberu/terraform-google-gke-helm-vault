@@ -6,49 +6,49 @@
 version: 2
 updates:
   - package-ecosystem: "terraform" # See documentation for possible values
-    directory: "/modules/vault/versions.tf" # Location of package manifests
+    directory: "/modules/vault" # Location of package manifests
     schedule:
       interval: "weekly"
       day: "saturday"
-      time: "18:00"
+      time: "18:45"
       timezone: "America/Los_Angeles"
 
   - package-ecosystem: "terraform" # See documentation for possible values
-    directory: "/modules/tls-private/versions.tf" # Location of package manifests
+    directory: "/modules/tls-private" # Location of package manifests
     schedule:
       interval: "weekly"
       day: "saturday"
-      time: "18:00"
+      time: "18:45"
       timezone: "America/Los_Angeles"
 
   - package-ecosystem: "terraform" # See documentation for possible values
-    directory: "/modules/google-kms/versions.tf" # Location of package manifests
+    directory: "/modules/google-kms" # Location of package manifests
     schedule:
       interval: "weekly"
       day: "saturday"
-      time: "18:00"
+      time: "18:45"
       timezone: "America/Los_Angeles"
       
   - package-ecosystem: "terraform" # See documentation for possible values
-    directory: "/modules/google-gke-cluster/versions.tf" # Location of package manifests
+    directory: "/modules/google-gke-cluster" # Location of package manifests
     schedule:
       interval: "weekly"
       day: "saturday"
-      time: "18:00"
+      time: "18:45"
       timezone: "America/Los_Angeles"
       
   - package-ecosystem: "terraform" # See documentation for possible values
-    directory: "/modules/google-cloud-dns/versions.tf" # Location of package manifests
+    directory: "/modules/google-cloud-dns" # Location of package manifests
     schedule:
       interval: "weekly"
       day: "saturday"
-      time: "18:00"
+      time: "18:45"
       timezone: "America/Los_Angeles"
 
   - package-ecosystem: "terraform" # See documentation for possible values
-    directory: "/modules/acme-cert/versions.tf" # Location of package manifests
+    directory: "/modules/acme-cert" # Location of package manifests
     schedule:
       interval: "weekly"
       day: "saturday"
-      time: "18:00"
+      time: "18:45"
       timezone: "America/Los_Angeles"
