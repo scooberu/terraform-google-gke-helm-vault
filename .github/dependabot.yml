@@ -9,28 +9,46 @@ updates:
     directory: "/modules/vault/versions.tf" # Location of package manifests
     schedule:
       interval: "weekly"
+      day: "Saturday"
+      time: "18:00"
+      timezone: "America/Los_Angeles"
 
   - package-ecosystem: "terraform" # See documentation for possible values
     directory: "/modules/tls-private/versions.tf" # Location of package manifests
     schedule:
       interval: "weekly"
+      day: "Saturday"
+      time: "18:00"
+      timezone: "America/Los_Angeles"
 
   - package-ecosystem: "terraform" # See documentation for possible values
     directory: "/modules/google-kms/versions.tf" # Location of package manifests
     schedule:
       interval: "weekly"
+      day: "Saturday"
+      time: "18:00"
+      timezone: "America/Los_Angeles"
       
   - package-ecosystem: "terraform" # See documentation for possible values
     directory: "/modules/google-gke-cluster/versions.tf" # Location of package manifests
     schedule:
       interval: "weekly"
+      day: "Saturday"
+      time: "18:00"
+      timezone: "America/Los_Angeles"
       
   - package-ecosystem: "terraform" # See documentation for possible values
     directory: "/modules/google-cloud-dns/versions.tf" # Location of package manifests
     schedule:
       interval: "weekly"
+      day: "Saturday"
+      time: "18:00"
+      timezone: "America/Los_Angeles"
 
   - package-ecosystem: "terraform" # See documentation for possible values
     directory: "/modules/acme-cert/versions.tf" # Location of package manifests
     schedule:
       interval: "weekly"
+      day: "Saturday"
+      time: "18:00"
+      timezone: "America/Los_Angeles"
